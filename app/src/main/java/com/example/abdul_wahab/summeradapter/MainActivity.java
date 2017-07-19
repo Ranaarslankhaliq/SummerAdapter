@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.abdul_wahab.summeradapter.adapters.BusAdapter;
 import com.example.abdul_wahab.summeradapter.models.Bus;
 
 import java.util.ArrayList;
@@ -22,12 +23,14 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < 100; i++) {
             busList.add(new Bus(i, "modelno" + i));
         }
-
-        ArrayAdapter<Bus> busAdapter = new ArrayAdapter<Bus>(this,android.R.layout.simple_list_item_1,busList);
-
         ListView lvBusList =  (ListView) findViewById(R.id.lvBusList);
 
-        lvBusList.setAdapter(busAdapter);
+        //ArrayAdapter<Bus> busAdapter = new ArrayAdapter<Bus>(this,android.R.layout.simple_list_item_1,busList);
+
+        BusAdapter busAdapter1 = new BusAdapter(this, busList);
+
+
+             lvBusList.setAdapter(busAdapter1);
 
     }
 }
